@@ -23,7 +23,7 @@ const SignUpPage = () => {
 	const { mutate, isError, isPending, error } = useMutation({
 		mutationFn: async ({ email, username, fullName, password }) => {
 			try {
-				const res = await fetch("/api/auth/signup", {
+				const res = await fetch("https://soshmed.onrender.com/api/auth/signup", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
