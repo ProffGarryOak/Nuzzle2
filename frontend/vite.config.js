@@ -8,7 +8,7 @@ export default defineConfig({
 		port: 3000,
 		proxy: {
 			"/api": {
-				target: "https://soshmed.onrender.com",
+				target: "https://narrative-nexus-oloe.onrender.com",
 				changeOrigin: true,
 			},
 		},
