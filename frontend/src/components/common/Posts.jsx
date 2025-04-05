@@ -7,15 +7,15 @@ const Posts = ({ feedType, username, userId }) => {
 	const getPostEndpoint = () => {
 		switch (feedType) {
 			case "forYou":
-				return "https://soshmed.onrender.com/api/posts/all";
+				return "/api/posts/all";
 			case "following":
-				return "https://soshmed.onrender.com/api/posts/following";
+				return "/api/posts/following";
 			case "posts":
-				return `https://soshmed.onrender.com/api/posts/user/${username}`;
+				return `/api/posts/user/${username}`;
 			case "likes":
-				return `https://soshmed.onrender.com/api/posts/likes/${userId}`;
+				return `/api/posts/likes/${userId}`;
 			default:
-				return "https://soshmed.onrender.com/api/posts/all";
+				return "/api/posts/all";
 		}
 	};
 
