@@ -7,6 +7,7 @@ import { BiLogOut } from "react-icons/bi";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 const Sidebar = () => {
   const queryClient = useQueryClient();
@@ -88,6 +89,50 @@ const Sidebar = () => {
                 <FaUser className="w-7 h-7 min-w-[28px]" style={{ color: '#fff' }}  />
               </Link>
             </li>
+            <li className="relative">
+  <button
+    onClick={() => {
+  toast((t) => (
+    <div className="text-white text-base leading-relaxed">
+      <div className="font-semibold text-lg mb-1">✨ Try Nudge – Your Chat Companion</div>
+      <p>
+        Looking for a smoother way to stay connected? Explore real-time messaging on{" "}
+        <span className="italic font-medium text-purple-300">Nudge</span>.
+      </p>
+      <button
+        onClick={() => {
+          toast.dismiss(t.id);
+          window.open("https://nudge-naa7.onrender.com/", "_blank");
+        }}
+        className="mt-4 inline-block bg-white text-[#3B1E54] font-semibold px-4 py-2 rounded-lg hover:bg-purple-100 transition-all"
+      >
+        Continue to Nudge ↗
+      </button>
+    </div>
+  ), {
+    duration: 8000,
+    icon: "💬",
+    style: {
+      background: "#3B1E54",
+      border: "1px solid #6b3f90",
+      padding: "20px",
+      maxWidth: "360px",
+    },
+  });
+}}
+
+    className="p-4 rounded-full hover:bg-stone-900 transition-all duration-300 flex items-center justify-center"
+    title="Nudge Chat"
+  >
+    <IoChatbubbleEllipsesOutline className="w-7 h-7" style={{ color: '#fff' }} />
+    
+    {/* New badge */}
+    <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold animate-bounce">
+      New
+    </span>
+  </button>
+</li>
+
           </ul>
           
           {/* Profile and logout */}
